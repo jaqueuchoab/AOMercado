@@ -4,6 +4,7 @@ import { HomeScreen } from '@/components/phone-screens/HomeScreen';
 import { SearchScreen } from '@/components/phone-screens/SearchScreen';
 import { ListScreen } from '@/components/phone-screens/ListScreen';
 import { CompareScreen } from '@/components/phone-screens/CompareScreen';
+import  AOMercado from '../public/AOM-Logo.png'
 
 const navItems = [
   { label: 'Início', href: '#inicio', active: true },
@@ -50,13 +51,8 @@ function App() {
       {/* Header */}
       <header className="sticky top-0 z-50 flex w-full flex-col items-start bg-white/80 shadow-sm backdrop-blur-md">
         <div className="flex h-16 w-full items-center justify-between px-4 sm:px-8">
-          <a href="#inicio" className="flex items-center gap-2" aria-label="AOMercado, voltar ao início">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#efa8f8] to-[#73479c] text-white">
-              <ShoppingBag className="h-4 w-4" />
-            </div>
-            <span className="text-lg font-medium text-[#4b276b]" style={{ fontFamily: 'Aoboshi One, serif' }}>
-              AOMercado
-            </span>
+          <a href="#inicio" className="flex items-center" aria-label="AOMercado, voltar ao início">
+            <img src={AOMercado} style={{height: "50px"}} />
           </a>
           <nav className="flex items-center gap-2 sm:gap-6">
             {navItems.map((item) =>
@@ -94,12 +90,7 @@ function App() {
 
         <div className="relative flex w-full max-w-4xl flex-col items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#efa8f8] to-[#73479c] text-white shadow-lg">
-              <ShoppingBag className="h-7 w-7" />
-            </div>
-            <span className="text-3xl font-medium text-[#4b276b]" style={{ fontFamily: 'Aoboshi One, serif' }}>
-              AOMercado
-            </span>
+            <img src={AOMercado} style={{height: "200px"}} />
           </div>
 
           <div className="flex flex-col items-center gap-3">
@@ -117,17 +108,6 @@ function App() {
               O AOMercado compara preços entre mercados pra você economizar, e leva tecnologia para os
               pequenos e médios mercados da sua região.
             </p>
-          </div>
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-            <div className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm text-[#4b276b] shadow-sm backdrop-blur-sm">
-              <TrendingDown className="h-4 w-4 text-[#73479c]" />
-              <span>Compare preços</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm text-[#4b276b] shadow-sm backdrop-blur-sm">
-              <MapPin className="h-4 w-4 text-[#73479c]" />
-              <span>Mercados próximos</span>
-            </div>
           </div>
 
           <button
