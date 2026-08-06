@@ -1,9 +1,9 @@
 import { ChevronDown, ShoppingBag, MapPin, TrendingDown } from 'lucide-react';
-import { PhoneMockup } from '@/components/PhoneMockup';
-import { HomeScreen } from '@/components/phone-screens/HomeScreen';
-import { SearchScreen } from '@/components/phone-screens/SearchScreen';
-import { ListScreen } from '@/components/phone-screens/ListScreen';
-import { CompareScreen } from '@/components/phone-screens/CompareScreen';
+import  AOMercado from './images/aom-logo.png';
+import  aom_tela_inicial from './images/aom-tela-inicial.png';
+import  aom_tela_pesquisa from './images/aom-tela-pesquisa.png';
+import  aom_tela_criar_lista from './images/aom-tela-criar-lista.png';
+import  aom_tela_comparar from './images/aom-tela-comparar.png';
 
 const navItems = [
   { label: 'Início', href: '#inicio', active: true },
@@ -16,19 +16,19 @@ const secondaryFeatures = [
     number: '2',
     title: 'Pesquisa de Produto',
     description: 'Ao buscar um item, você vê na hora os preços praticados por cada mercado cadastrado, podendo filtrar por proximidade, preço ou avaliação.',
-    screen: <SearchScreen />,
+    screen: aom_tela_pesquisa,
   },
   {
     number: '3',
     title: 'Montagem de Lista',
     description: 'Monte sua lista de compras de forma simples, por categoria de produto, sem se preocupar com marcas específicas.',
-    screen: <ListScreen />,
+    screen: aom_tela_criar_lista,
   },
   {
     number: '4',
     title: 'Comparativo de Lista',
     description: 'Com um toque, o AOMercado mostra em qual mercado sua lista completa sai mais barata, considerando preço e proximidade.',
-    screen: <CompareScreen />,
+    screen: aom_tela_comparar,
   },
 ];
 
@@ -50,13 +50,8 @@ function App() {
       {/* Header */}
       <header className="sticky top-0 z-50 flex w-full flex-col items-start bg-white/80 shadow-sm backdrop-blur-md">
         <div className="flex h-16 w-full items-center justify-between px-4 sm:px-8">
-          <a href="#inicio" className="flex items-center gap-2" aria-label="AOMercado, voltar ao início">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#efa8f8] to-[#73479c] text-white">
-              <ShoppingBag className="h-4 w-4" />
-            </div>
-            <span className="text-lg font-medium text-[#4b276b]" style={{ fontFamily: 'Aoboshi One, serif' }}>
-              AOMercado
-            </span>
+          <a href="#inicio" className="flex items-center" aria-label="AOMercado, voltar ao início">
+            <img src={AOMercado} style={{height: "30px"}} />
           </a>
           <nav className="flex items-center gap-2 sm:gap-6">
             {navItems.map((item) =>
@@ -94,17 +89,12 @@ function App() {
 
         <div className="relative flex w-full max-w-4xl flex-col items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#efa8f8] to-[#73479c] text-white shadow-lg">
-              <ShoppingBag className="h-7 w-7" />
-            </div>
-            <span className="text-3xl font-medium text-[#4b276b]" style={{ fontFamily: 'Aoboshi One, serif' }}>
-              AOMercado
-            </span>
+            <img src={AOMercado} style={{height: "120px"}} />
           </div>
 
           <div className="flex flex-col items-center gap-3">
             <h1
-              className="max-w-2xl text-center text-3xl leading-tight text-[#4b276b] sm:text-4xl"
+              className="max-w-2xl text-center text-3xl leading-tight text-[#4b276b] sm:text-3xl"
               style={{ fontFamily: 'Aoboshi One, serif' }}
             >
               Economize tempo e dinheiro <br className="hidden sm:block" />
@@ -117,17 +107,6 @@ function App() {
               O AOMercado compara preços entre mercados pra você economizar, e leva tecnologia para os
               pequenos e médios mercados da sua região.
             </p>
-          </div>
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-            <div className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm text-[#4b276b] shadow-sm backdrop-blur-sm">
-              <TrendingDown className="h-4 w-4 text-[#73479c]" />
-              <span>Compare preços</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm text-[#4b276b] shadow-sm backdrop-blur-sm">
-              <MapPin className="h-4 w-4 text-[#73479c]" />
-              <span>Mercados próximos</span>
-            </div>
           </div>
 
           <button
@@ -179,9 +158,7 @@ function App() {
                 </p>
               </article>
               <div className="flex w-full justify-center lg:w-[360px]">
-                <PhoneMockup className="h-[600px] w-[300px]">
-                  <HomeScreen />
-                </PhoneMockup>
+                <img src={aom_tela_inicial} className="h-[600px] w-[300px]" />
               </div>
             </div>
           </div>
@@ -191,9 +168,7 @@ function App() {
             {secondaryFeatures.map((feature) => (
               <article key={feature.number} className="flex flex-col items-center gap-6">
                 <div className="flex w-full justify-center">
-                  <PhoneMockup className="h-[560px] w-[280px]">
-                    {feature.screen}
-                  </PhoneMockup>
+                  <img src={feature.screen} className="h-[560px] w-[280px]" />
                 </div>
                 <div className="flex flex-col items-center gap-3 px-4">
                   <div className="flex items-center justify-center gap-2">
@@ -255,12 +230,7 @@ function App() {
       {/* Footer */}
       <footer className="flex w-full flex-col items-center bg-[#faf1fc] px-8 py-12">
         <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#efa8f8] to-[#73479c] text-white">
-            <ShoppingBag className="h-5 w-5" />
-          </div>
-          <span className="text-xl font-medium text-[#4b276b]" style={{ fontFamily: 'Aoboshi One, serif' }}>
-            AOMercado
-          </span>
+          <img src={AOMercado} style={{height: '30px'}} />
         </div>
         <p className="mt-3 text-center text-sm text-[#4e434e] [font-family:Inter,sans-serif]">
           AOMercado — Projeto em desenvolvimento
