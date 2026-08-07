@@ -172,7 +172,7 @@ function App() {
               </div>
             </div>
 
-            <div className="flex order-0 md:order-1 items-center gap-3">
+            <div className="flex order-0 md:order-1 items-center justify-center gap-3">
               <img src={heroSrc} className='w-sm md:w-6xl' />
             </div>
           </div>
